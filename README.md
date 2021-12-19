@@ -13,10 +13,12 @@ Implement a server with the following characteristics:
 - The usage of utilities from the standard libraries will be valued instead of adding dependencies from external libraries (boost, etc.)
 - To compile the code, you can use the C ++ 17 standard or lower.
 
-##Examples:
+## Examples:
 
 ### Start the server on port 3456 with a cache of 10 items
+```bash
 $> ./server -p 3456 -C 10
+```
 
 ### Request examples
 ```bash
