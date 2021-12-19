@@ -13,34 +13,46 @@ Implement a server with the following characteristics:
 - The usage of utilities from the standard libraries will be valued instead of adding dependencies from external libraries (boost, etc.)
 - To compile the code, you can use the C ++ 17 standard or lower.
 
-Examples:
+##Examples:
 
-# start the server on port 3456 with a cache of 10 items
+### Start the server on port 3456 with a cache of 10 items
 $> ./server -p 3456 -C 10
 
-# request examples
+### Request examples
+```bash
 $> echo "get test1 3000" | nc localhost 3456
 (... 3 seconds later ...)
 5a105e8b9d40e1329780d62ea2265d8a
+```
 
+```bash
 $> echo "get test2 5000" | nc localhost 3456
 (... 5 seconds later ...)
 ad0234829205b9033196ba818f7a872b
+```
 
+```bash
 $> echo "get test1 6000" | nc localhost 3456
 (immediately, because it is cached)
 5a105e8b9d40e1329780d62ea2265d8a
+```
 
+```bash
 $> kill -USR1 <server pid>
 Done!
+```
 
+```bash
 $> echo "get test1 3000" | nc localhost 3456
 (... 3 seconds later ...)
 5a105e8b9d40e1329780d62ea2265d8a
+```
 
+```bash
 $> kill -TERM <server pid>
 (test1, 5a105e8b9d40e1329780d62ea2265d8a)
 Bye!
+```
 
 
 
