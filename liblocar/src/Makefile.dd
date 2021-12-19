@@ -1,0 +1,46 @@
+#|* File :: Makefile.dd
+#|*
+#|* Desc :: makefile for header dependency definitions 
+#|*
+
+
+#########################################################################################################
+# PRE INCLUDES
+#
+
+
+
+#########################################################################################################
+# HEADERS
+#
+LIBLOCAR_STRING_HDD = $(LIB_SRC)/lcr/String.hpp
+
+LIBLOCAR_LOGGER_HDD = $(LIB_SRC)/lcr/Logger.h
+
+LIBLOCAR_STDLOGGER_HDD = $(LIB_SRC)/lcr/StdLogger.h $(LIBLOCAR_STRING_HDD)
+
+LIBLOCAR_EXCEPTIONS_HDD = $(LIB_SRC)/lcr/Exceptions.hpp $(LIBLOCAR_STRING_HDD)
+
+LIBLOCAR_COMMANDLINE_HDD = $(LIB_SRC)/lcr/CommandLine.hpp
+
+LIBLOCAR_CACHE_HDD = $(LIB_SRC)/lcr/Cache.hpp $(LIBLOCAR_EXCEPTIONS_HDD)
+
+LIBLOCAR_MD5_HDD = $(LIB_SRC)/lcr/md5.h
+
+
+
+#########################################################################################################
+# OBJECTS DEPENDENCY DEFINITION
+#
+
+LIBLOCAR_STDLOGGER_OBJ = $(LIB_SRC)/lcr/StdLogger.o
+
+LIBLOCAR_MD5_OBJ = $(LIB_SRC)/lcr/md5.o
+
+
+
+#########################################################################################################
+# POST INCLUDES
+#
+
+

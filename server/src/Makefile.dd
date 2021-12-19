@@ -1,0 +1,35 @@
+#|* File :: Makefile.dd
+#|*
+#|* Desc :: makefile for header dependency definitions 
+#|*
+
+
+#########################################################################################################
+# PRE INCLUDES
+#
+include $(LIB_SRC)/Makefile.dd
+
+
+#########################################################################################################
+# HEADERS
+#
+
+NCS_WORKER_HDD = $(SERVER_SRC)/ncs/Worker.h $(NCS_TYPES_HDD) $(LIBLOCAR_LOGGER_HDD) $(LIBLOCAR_CACHE_HDD)
+
+NCS_SERVER_HDD = $(SERVER_SRC)/ncs/Server.h $(NCS_WORKER_HDD) $(LIBLOCAR_EXCEPTIONS_HDD)
+
+
+
+#########################################################################################################
+# OBJECTS DEPENDENCY DEFINITION
+#
+
+NCS_WORKER_OBJ = $(SERVER_SRC)/ncs/Worker.o
+
+NCS_SERVER_OBJ = $(SERVER_SRC)/ncs/Server.o
+
+
+#########################################################################################################
+# POST INCLUDES
+#
+
